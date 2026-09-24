@@ -46,15 +46,13 @@ function Get-Factorial {
 }
 
 if ($MyInvocation.InvocationName -ne '.') {
-    switch ($Operation) {
-        'fibonacci' {
-            $result = Get-Fibonacci -N $N
-            $label = 'Fibonacci'
-        }
-        'factorial' {
-            $result = Get-Factorial -N $N
-            $label = 'Factorial'
-        }
+    if ($Operation -eq 'fibonacci') {
+        $result = Get-Fibonacci -N $N
+        $label = 'Fibonacci'
+    }
+    else {
+        $result = Get-Factorial -N $N
+        $label = 'Factorial'
     }
 
     Write-Output "$label($N) = $result"
