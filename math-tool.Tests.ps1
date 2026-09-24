@@ -16,7 +16,7 @@ Describe 'Get-Fibonacci' {
         $result = @(Get-Fibonacci -N 5)
 
         $result | Should -HaveCount 1
-        $result[0] | Should -BeOfType ([long])
+        $result[0] | Should -BeOfType ([bigint])
         $result[0] | Should -Be 5
     }
 }

@@ -13,8 +13,8 @@ function Get-Fibonacci {
         [int]$N
     )
 
-    $previous = [long]0
-    $current = [long]1
+    $previous = [bigint]0
+    $current = [bigint]1
 
     for ($index = 0; $index -lt $N; $index++) {
         $next = $previous + $current
