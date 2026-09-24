@@ -23,7 +23,7 @@ Describe 'Get-Fibonacci' {
 
 Describe 'math-tool direct execution' {
     It 'writes exactly one formatted Fibonacci result line' {
-        $pwsh = (Get-Command pwsh -CommandType Application).Source
+        $pwsh = (Get-Command pwsh -CommandType Application | Select-Object -First 1).Source
         $output = @(& $pwsh -NoLogo -NoProfile -File $scriptPath -N 5)
 
         $LASTEXITCODE | Should -Be 0
